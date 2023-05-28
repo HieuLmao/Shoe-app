@@ -62,59 +62,61 @@ class _HomePageState extends State<HomePage> {
           color: black,
         ),
       ),
-      child: Column(
-        children: [
-          const SearchWidget(),
-          SizedBox(
-            height: large * 1.5,
-            child: ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) => const CategoryWidget(),
-              itemCount: 7,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SearchWidget(),
+            SizedBox(
+              height: large * 1.5,
+              child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) => const CategoryWidget(),
+                itemCount: 7,
+              ),
             ),
-          ),
-          const TitleWidget(text: 'Popular', action: 'View all'),
-          SizedBox(
-            height: 350,
-            child: ListView.builder(
-              padding: EdgeInsets.only(bottom: sx),
-              physics: const BouncingScrollPhysics(),
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                // Shoe shoe = value.shoes[index];
-                // return ShoeItem(
-                //   imageUrl: shoe.imageUrl,
-                //   descreption: shoe.descreption,
-                //   id: shoe.id,
-                //   price: shoe.price,
-                //   name: shoe.name,
-                //   rating: shoe.rating,
-                return ChangeNotifierProvider.value(
-                  value: response[index],
-                  child: const ShoeItem(),
-                );
-              },
-              itemCount: 6,
+            const TitleWidget(text: 'Popular', action: 'View all'),
+            SizedBox(
+              height: 350,
+              child: ListView.builder(
+                padding: EdgeInsets.only(bottom: sx),
+                physics: const BouncingScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  // Shoe shoe = value.shoes[index];
+                  // return ShoeItem(
+                  //   imageUrl: shoe.imageUrl,
+                  //   descreption: shoe.descreption,
+                  //   id: shoe.id,
+                  //   price: shoe.price,
+                  //   name: shoe.name,
+                  //   rating: shoe.rating,
+                  return ChangeNotifierProvider.value(
+                    value: response[index],
+                    child: const ShoeItem(),
+                  );
+                },
+                itemCount: 6,
+              ),
             ),
-          ),
-          const TitleWidget(text: 'New Arrivals', action: 'View all'),
-          SizedBox(
-            height: 150,
-            child: ListView.builder(
-              padding: EdgeInsets.only(bottom: small),
-              physics: const BouncingScrollPhysics(),
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return ChangeNotifierProvider.value(
-                  value: response[index + 3],
-                  child: const NewShoeItem(),
-                );
-              },
-              itemCount: 6,
+            const TitleWidget(text: 'New Arrivals', action: 'View all'),
+            SizedBox(
+              height: 150,
+              child: ListView.builder(
+                padding: EdgeInsets.only(bottom: small),
+                physics: const BouncingScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return ChangeNotifierProvider.value(
+                    value: response[index + 3],
+                    child: const NewShoeItem(),
+                  );
+                },
+                itemCount: 6,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

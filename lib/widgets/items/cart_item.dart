@@ -54,7 +54,7 @@ class CartItem extends StatelessWidget {
                 style: heading,
               ),
               Text(
-                (price),
+                '\$$price',
                 style: heading,
               ),
               Row(

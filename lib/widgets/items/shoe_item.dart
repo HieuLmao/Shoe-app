@@ -5,6 +5,7 @@ import 'package:shoe_app/models/cart.dart';
 import 'package:shoe_app/models/shoe.dart';
 import 'package:shoe_app/screens/detail_page.dart';
 import 'package:shoe_app/styles/styles.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class ShoeItem extends StatelessWidget {
   const ShoeItem({super.key});
@@ -64,9 +65,11 @@ class ShoeItem extends StatelessWidget {
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(sx),
-                    image: DecorationImage(
-                        image: NetworkImage(response.imageUrl),
-                        fit: BoxFit.cover),
+                  ),
+                  child: FadeInImage.memoryNetwork(
+                    placeholder: kTransparentImage,
+                    image: response.imageUrl,
+                    fit: BoxFit.cover,
                   ),
                 ),
                 Consumer<Shoe>(
@@ -101,71 +104,69 @@ class ShoeItem extends StatelessWidget {
             SizedBox(
               height: large,
             ),
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            'Review',
-                            style: textGrey,
-                          ),
-                          SizedBox(
-                            width: sx,
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                response.rating,
-                                style: textGrey,
-                              ),
-                              Container(
-                                margin: EdgeInsets.only(bottom: 5),
-                                child: Icon(
-                                  Ionicons.star,
-                                  color: startColor,
-                                  size: meidum,
-                                ),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                      Text(
-                        '\$${response.price}',
-                        style: heading,
-                      ),
-                    ],
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      addToCart.addItem(response.id.toString(), response.name,
-                          response.price, response.imageUrl);
-                      showDialog(
-                        context: context,
-                        builder: (context) => const AlertDialog(
-                          title: Text('Successfully added!'),
-                          content: Text('Check your cart'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          'Review',
+                          style: textGrey,
                         ),
-                      );
-                    },
-                    child: Container(
-                      padding: EdgeInsets.all(sx),
-                      decoration: BoxDecoration(
-                          color: primaryColor,
-                          borderRadius: BorderRadius.circular(50)),
-                      child: Icon(
-                        Ionicons.add,
-                        color: white,
-                      ),
+                        SizedBox(
+                          width: sx,
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              response.rating,
+                              style: textGrey,
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(bottom: 5),
+                              child: Icon(
+                                Ionicons.star,
+                                color: startColor,
+                                size: meidum,
+                              ),
+                            )
+                          ],
+                        )
+                      ],
                     ),
-                  )
-                ],
-              ),
+                    Text(
+                      '\$${response.price}',
+                      style: heading,
+                    ),
+                  ],
+                ),
+                GestureDetector(
+                  onTap: () {
+                    addToCart.addItem(response.id.toString(), response.name,
+                        response.price, response.imageUrl);
+                    showDialog(
+                      context: context,
+                      builder: (context) => const AlertDialog(
+                        title: Text('Successfully added!'),
+                        content: Text('Check your cart'),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(sx),
+                    decoration: BoxDecoration(
+                        color: primaryColor,
+                        borderRadius: BorderRadius.circular(50)),
+                    child: Icon(
+                      Ionicons.add,
+                      color: white,
+                    ),
+                  ),
+                )
+              ],
             )
           ],
         ),

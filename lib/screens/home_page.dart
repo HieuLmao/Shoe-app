@@ -79,43 +79,22 @@ class _HomePageState extends State<HomePage> {
             const TitleWidget(text: 'Popular', action: 'View all'),
             SizedBox(
               height: 350,
-              child: ListView.builder(
-                padding: EdgeInsets.only(bottom: sx),
-                physics: const BouncingScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  // Shoe shoe = value.shoes[index];
-                  // return ShoeItem(
-                  //   imageUrl: shoe.imageUrl,
-                  //   descreption: shoe.descreption,
-                  //   id: shoe.id,
-                  //   price: shoe.price,
-                  //   name: shoe.name,
-                  //   rating: shoe.rating,
-                  return ChangeNotifierProvider.value(
-                    value: response[index],
-                    child: const ShoeItem(),
-                  );
-                },
+              width: MediaQuery.of(context).size.width * 0.94,
+              child: CarouselSlider.builder(
                 itemCount: 6,
+                itemBuilder: (context, index, realIndex) =>
+                    ChangeNotifierProvider.value(
+                  value: response[index],
+                  child: const ShoeItem(),
+                ),
+                options: CarouselOptions(
+                  aspectRatio: MediaQuery.of(context).size.width * 0.65 / 250,
+                ),
               ),
             ),
             const TitleWidget(text: 'New Arrivals', action: 'View all'),
             SizedBox(
               height: 200,
-              width: MediaQuery.of(context).size.width,
-              // child: ListView.builder(
-              //   padding: EdgeInsets.only(bottom: small),
-              //   physics: const BouncingScrollPhysics(),
-              //   scrollDirection: Axis.horizontal,
-              //   itemBuilder: (context, index) {
-              //     return ChangeNotifierProvider.value(
-              //       value: response[index + 3],
-              //       child: const NewShoeItem(),
-              //     );
-              //   },
-              //   itemCount: 6,
-              // ),
               child: CarouselSlider.builder(
                 itemCount: 6,
                 itemBuilder: (context, index, realIndex) =>

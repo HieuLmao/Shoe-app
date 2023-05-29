@@ -22,9 +22,9 @@ class NewShoeItem extends StatelessWidget {
             arguments: response);
       },
       child: Container(
-        height: 150,
-        padding: EdgeInsets.all(small),
-        margin: EdgeInsets.only(right: sx),
+        width: MediaQuery.of(context).size.width * 0.7,
+        padding: const EdgeInsets.all(5),
+        margin: EdgeInsets.symmetric(vertical: small),
         decoration: BoxDecoration(
             color: white,
             borderRadius: BorderRadius.circular(sx),
@@ -43,8 +43,8 @@ class NewShoeItem extends StatelessWidget {
         child: Stack(
           children: [
             Container(
-              height: 120,
-              width: 120,
+              height: 150,
+              width: 300,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(sx),
               ),

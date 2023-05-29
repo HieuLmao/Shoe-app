@@ -15,7 +15,7 @@ class TitleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: meidum),
+      padding: EdgeInsets.only(top: meidum),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

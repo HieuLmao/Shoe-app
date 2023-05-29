@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:provider/provider.dart';
@@ -101,18 +102,29 @@ class _HomePageState extends State<HomePage> {
             ),
             const TitleWidget(text: 'New Arrivals', action: 'View all'),
             SizedBox(
-              height: 150,
-              child: ListView.builder(
-                padding: EdgeInsets.only(bottom: small),
-                physics: const BouncingScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  return ChangeNotifierProvider.value(
-                    value: response[index + 3],
-                    child: const NewShoeItem(),
-                  );
-                },
+              height: 200,
+              width: MediaQuery.of(context).size.width,
+              // child: ListView.builder(
+              //   padding: EdgeInsets.only(bottom: small),
+              //   physics: const BouncingScrollPhysics(),
+              //   scrollDirection: Axis.horizontal,
+              //   itemBuilder: (context, index) {
+              //     return ChangeNotifierProvider.value(
+              //       value: response[index + 3],
+              //       child: const NewShoeItem(),
+              //     );
+              //   },
+              //   itemCount: 6,
+              // ),
+              child: CarouselSlider.builder(
                 itemCount: 6,
+                itemBuilder: (context, index, realIndex) =>
+                    ChangeNotifierProvider.value(
+                  value: response[index + 3],
+                  child: const NewShoeItem(),
+                ),
+                options:
+                    CarouselOptions(autoPlay: true, enlargeCenterPage: true),
               ),
             ),
           ],

@@ -38,7 +38,7 @@ class ShoeItem extends StatelessWidget {
       },
       child: Container(
         height: 280,
-        width: MediaQuery.of(context).size.width * 0.94,
+        width: MediaQuery.of(context).size.width * 0.65,
         padding: EdgeInsets.all(sx),
         margin: EdgeInsets.only(right: meidum),
         decoration: BoxDecoration(

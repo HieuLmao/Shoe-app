@@ -22,7 +22,7 @@ class NewShoeItem extends StatelessWidget {
             arguments: response);
       },
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.7,
+        width: MediaQuery.of(context).size.width * 0.6,
         padding: const EdgeInsets.all(5),
         margin: EdgeInsets.symmetric(vertical: small),
         decoration: BoxDecoration(

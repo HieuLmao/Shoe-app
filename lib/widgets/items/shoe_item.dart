@@ -37,10 +37,10 @@ class ShoeItem extends StatelessWidget {
             arguments: response);
       },
       child: Container(
-        height: 280,
-        width: MediaQuery.of(context).size.width * 0.93,
+        height: 350,
+        width: MediaQuery.of(context).size.width * 0.73,
         padding: EdgeInsets.all(sx),
-        margin: EdgeInsets.only(right: meidum),
+        margin: EdgeInsets.symmetric(vertical: small, horizontal: small),
         decoration: BoxDecoration(
             color: white,
             borderRadius: BorderRadius.circular(sx),
@@ -158,11 +158,11 @@ class ShoeItem extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.all(sx),
                     decoration: BoxDecoration(
-                        color: primaryColor,
-                        borderRadius: BorderRadius.circular(50)),
+                        color: black, borderRadius: BorderRadius.circular(50)),
                     child: Icon(
                       Ionicons.add,
                       color: white,
+                      size: large,
                     ),
                   ),
                 )

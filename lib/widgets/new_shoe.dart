@@ -3,6 +3,7 @@ import 'package:ionicons/ionicons.dart';
 import 'package:provider/provider.dart';
 import 'package:shoe_app/models/shoe.dart';
 import 'package:shoe_app/styles/styles.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 import '../screens/detail_page.dart';
 
@@ -46,8 +47,11 @@ class NewShoeItem extends StatelessWidget {
               width: 120,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(sx),
-                image: DecorationImage(
-                    image: NetworkImage(response.imageUrl), fit: BoxFit.cover),
+              ),
+              child: FadeInImage.memoryNetwork(
+                placeholder: kTransparentImage,
+                image: response.imageUrl,
+                fit: BoxFit.cover,
               ),
             ),
             Consumer<Shoe>(

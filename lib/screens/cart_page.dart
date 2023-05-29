@@ -47,15 +47,15 @@ class CartPage extends StatelessWidget {
                 ],
               ),
               GestureDetector(
-                onTap: () {
+                onTap: () async {
+                  await showDialog(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                            title: response.cartList.isEmpty
+                                ? const Text('Cart is empty')
+                                : const Text('Successfully !'),
+                          ));
                   response.pay();
-                  showDialog(
-                    context: context,
-                    builder: (context) => const AlertDialog(
-                      title: Text('Successfully !'),
-                      content: Text(':)))))))'),
-                    ),
-                  );
                 },
                 child: Container(
                   padding:

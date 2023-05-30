@@ -5,6 +5,7 @@ import 'package:shoe_app/models/cart.dart';
 import 'package:shoe_app/models/shoe.dart';
 import 'package:shoe_app/styles/styles.dart';
 import 'package:shoe_app/widgets/appbar.dart';
+import 'package:shoe_app/widgets/size.dart';
 import 'package:shoe_app/widgets/title.dart';
 
 class DetailPage extends StatefulWidget {
@@ -72,25 +73,7 @@ class _DetailPageState extends State<DetailPage> {
                 overflow: TextOverflow.ellipsis,
                 style: textGrey),
             const TitleWidget(text: 'Size', action: ''),
-            SizedBox(
-              height: 80,
-              child: ListView.builder(
-                padding: EdgeInsets.symmetric(vertical: small),
-                scrollDirection: Axis.horizontal,
-                itemCount: 5,
-                itemBuilder: (context, index) => Container(
-                  height: 60,
-                  width: 60,
-                  padding: EdgeInsets.all(small),
-                  margin: EdgeInsets.only(right: sx),
-                  decoration: BoxDecoration(
-                    color: primaryColor,
-                    borderRadius: BorderRadius.circular(sx),
-                  ),
-                  child: Center(child: Text('4$index')),
-                ),
-              ),
-            ),
+            const SizeWidget(),
             Container(
               padding: EdgeInsets.symmetric(vertical: large),
               child: Row(

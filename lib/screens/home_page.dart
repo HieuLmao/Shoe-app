@@ -5,7 +5,6 @@ import 'package:ionicons/ionicons.dart';
 import 'package:shoe_app/models/cart.dart';
 
 import 'package:provider/provider.dart';
-import 'package:shoe_app/models/category.dart';
 import 'package:shoe_app/provider/shoe_provider.dart';
 
 import 'package:shoe_app/screens/cart_page.dart';

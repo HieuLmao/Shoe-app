@@ -1,17 +1,16 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:provider/provider.dart';
+
 import 'package:shoe_app/models/cart.dart';
+
+import 'package:provider/provider.dart';
+import 'package:shoe_app/models/category.dart';
 import 'package:shoe_app/provider/shoe_provider.dart';
+
 import 'package:shoe_app/screens/cart_page.dart';
 import 'package:shoe_app/styles/styles.dart';
-import 'package:shoe_app/widgets/appbar.dart';
-import 'package:shoe_app/widgets/items/category_item.dart';
-import 'package:shoe_app/widgets/new_shoe.dart';
-import 'package:shoe_app/widgets/search.dart';
-import 'package:shoe_app/widgets/items/shoe_item.dart';
-import 'package:shoe_app/widgets/title.dart';
+import '../widgets/export.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,7 +22,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       Provider.of<ShoeProvider>(context, listen: false).getAllShoe();
@@ -72,8 +70,10 @@ class _HomePageState extends State<HomePage> {
               child: ListView.builder(
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => const CategoryWidget(),
-                itemCount: 7,
+                itemCount: categories.length,
+                itemBuilder: (context, index) => CategoryWidget(
+                  title: categories[index],
+                ),
               ),
             ),
             const TitleWidget(text: 'Popular', action: 'View all'),

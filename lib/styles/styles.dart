@@ -17,7 +17,7 @@ TextStyle heading = GoogleFonts.signika(
 TextStyle textWhite = GoogleFonts.signika(
     fontSize: 20, color: white, fontWeight: FontWeight.w500);
 TextStyle textGrey =
-    GoogleFonts.signika(fontSize: 18, color: grey, fontWeight: FontWeight.w500);
+    GoogleFonts.signika(fontSize: 20, color: grey, fontWeight: FontWeight.w500);
 //size
 
 var small = 10.0;

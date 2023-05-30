@@ -20,7 +20,6 @@ class _DetailPageState extends State<DetailPage> {
   Widget build(BuildContext context) {
     final cart = Provider.of<CartProvider>(context);
 
-    ;
     final args = ModalRoute.of(context)!.settings.arguments as Shoe;
     bool heart = args.isFav;
     void setHeart() {

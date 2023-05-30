@@ -25,20 +25,21 @@ class NewShoeItem extends StatelessWidget {
         padding: const EdgeInsets.all(5),
         margin: EdgeInsets.symmetric(vertical: small),
         decoration: BoxDecoration(
-            color: white,
-            borderRadius: BorderRadius.circular(sx),
-            boxShadow: [
-              BoxShadow(
-                color: white,
-                offset: const Offset(-5, -5),
-                blurRadius: 3,
-              ),
-              BoxShadow(
-                color: grey,
-                offset: const Offset(5, 5),
-                blurRadius: 5,
-              ),
-            ]),
+          color: white,
+          borderRadius: BorderRadius.circular(sx),
+          boxShadow: [
+            BoxShadow(
+              color: white,
+              offset: const Offset(-5, -5),
+              blurRadius: 3,
+            ),
+            BoxShadow(
+              color: grey,
+              offset: const Offset(5, 5),
+              blurRadius: 5,
+            ),
+          ],
+        ),
         child: Stack(
           children: [
             Container(

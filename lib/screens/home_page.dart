@@ -10,6 +10,7 @@ import 'package:shoe_app/provider/shoe_provider.dart';
 
 import 'package:shoe_app/screens/cart_page.dart';
 import 'package:shoe_app/styles/styles.dart';
+import 'package:shoe_app/widgets/categories.dart';
 import '../widgets/export.dart';
 
 class HomePage extends StatefulWidget {
@@ -65,17 +66,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             const SearchWidget(),
-            SizedBox(
-              height: large * 1.5,
-              child: ListView.builder(
-                physics: const BouncingScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                itemCount: categories.length,
-                itemBuilder: (context, index) => CategoryWidget(
-                  title: categories[index],
-                ),
-              ),
-            ),
+            const CategoriesWidget(),
             const TitleWidget(text: 'Popular', action: 'View all'),
             SizedBox(
               height: 350,

@@ -1,39 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:shoe_app/styles/styles.dart';
 
-class CategoryWidget extends StatefulWidget {
+class CategoryItem extends StatelessWidget {
   final String title;
-  const CategoryWidget({
+  final Color color;
+  final TextStyle style;
+  final Function() handleSelect;
+  const CategoryItem({
     super.key,
+    required this.handleSelect,
     required this.title,
+    required this.color,
+    required this.style,
   });
 
   @override
-  State<CategoryWidget> createState() => _CategoryWidgetState();
-}
-
-class _CategoryWidgetState extends State<CategoryWidget> {
-  bool isSelected = false;
-  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        setState(() {
-          isSelected = !isSelected;
-        });
-      },
+      onTap: handleSelect,
       child: Container(
         height: 50,
         margin: EdgeInsets.only(right: sx),
         padding: EdgeInsets.symmetric(horizontal: 25, vertical: small),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(sx),
-          color: isSelected ? primaryColor : white,
-        ),
+            borderRadius: BorderRadius.circular(sx), color: color),
         child: Center(
           child: Text(
-            widget.title,
-            style: isSelected ? textWhite : textGrey,
+            title,
+            style: style,
           ),
         ),
       ),

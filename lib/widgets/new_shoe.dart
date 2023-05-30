@@ -8,7 +8,6 @@ import 'package:transparent_image/transparent_image.dart';
 import '../screens/detail_page.dart';
 
 class NewShoeItem extends StatelessWidget {
-  // final String imageUrl;
   const NewShoeItem({
     super.key,
   });
@@ -31,12 +30,12 @@ class NewShoeItem extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                 color: white,
-                offset: Offset(-5, -5),
+                offset: const Offset(-5, -5),
                 blurRadius: 3,
               ),
               BoxShadow(
                 color: grey,
-                offset: Offset(5, 5),
+                offset: const Offset(5, 5),
                 blurRadius: 5,
               ),
             ]),

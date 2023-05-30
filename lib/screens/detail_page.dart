@@ -88,7 +88,7 @@ class _DetailPageState extends State<DetailPage> {
                     color: primaryColor,
                     borderRadius: BorderRadius.circular(sx),
                   ),
-                  child: Center(child: Text('3$index')),
+                  child: Center(child: Text('4$index')),
                 ),
               ),
             ),

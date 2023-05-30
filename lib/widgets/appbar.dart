@@ -36,7 +36,7 @@ class AppBarWidget extends StatelessWidget {
                   padding: EdgeInsets.all(small),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(sx),
-                      border: Border.all(color: black)),
+                      border: Border.all(color: grey)),
                   child: leadingIcon,
                 ),
                 Text(
@@ -51,7 +51,7 @@ class AppBarWidget extends StatelessWidget {
                         padding: EdgeInsets.all(small),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(sx),
-                            border: Border.all(color: black)),
+                            border: Border.all(color: grey)),
                         child: trailingIcon,
                       ),
                       Positioned(

@@ -19,9 +19,13 @@ class TitleWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            text,
-            style: heading,
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.45,
+            child: Text(
+              text,
+              style: heading,
+              maxLines: 1,
+            ),
           ),
           Row(
             children: [

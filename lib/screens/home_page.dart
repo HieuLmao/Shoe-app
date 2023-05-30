@@ -7,7 +7,7 @@ import 'package:shoe_app/provider/shoe_provider.dart';
 import 'package:shoe_app/screens/cart_page.dart';
 import 'package:shoe_app/styles/styles.dart';
 import 'package:shoe_app/widgets/appbar.dart';
-import 'package:shoe_app/widgets/category.dart';
+import 'package:shoe_app/widgets/items/category_item.dart';
 import 'package:shoe_app/widgets/new_shoe.dart';
 import 'package:shoe_app/widgets/search.dart';
 import 'package:shoe_app/widgets/items/shoe_item.dart';

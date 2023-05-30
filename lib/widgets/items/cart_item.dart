@@ -49,9 +49,13 @@ class CartItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'name',
-                style: heading,
+              Container(
+                width: MediaQuery.of(context).size.width * 0.4,
+                child: Text(
+                  name,
+                  style: heading,
+                  maxLines: 1,
+                ),
               ),
               Text(
                 '\$$price',

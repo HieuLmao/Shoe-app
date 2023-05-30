@@ -63,7 +63,7 @@ class _DetailPageState extends State<DetailPage> {
               ),
             ),
             TitleWidget(
-              text: 'name',
+              text: args.name,
               action: args.rating,
               icon: Icon(Ionicons.star, color: startColor, size: meidum),
             ),

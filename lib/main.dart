@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:shoe_app/models/cart.dart';
 import 'package:shoe_app/provider/shoe_provider.dart';
+import 'package:shoe_app/screens/all_shoes.dart';
 import 'package:shoe_app/screens/detail_page.dart';
 import 'package:shoe_app/screens/home_page.dart';
 
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         home: const HomePage(),
         routes: {
           DetailPage.routesName: (context) => const DetailPage(),
+          AllShoes.routesName: (context) => const AllShoes(),
         },
       ),
     );

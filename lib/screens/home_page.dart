@@ -11,6 +11,7 @@ import 'package:shoe_app/screens/cart_page.dart';
 import 'package:shoe_app/styles/styles.dart';
 import 'package:shoe_app/widgets/categories.dart';
 import '../widgets/export.dart';
+import 'all_shoes.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -66,7 +67,13 @@ class _HomePageState extends State<HomePage> {
           children: [
             const SearchWidget(),
             const CategoriesWidget(),
-            const TitleWidget(text: 'Popular', action: 'View all'),
+            TitleWidget(
+              text: 'Popular',
+              action: 'View all',
+              ontap: () {
+                Navigator.pushNamed(context, AllShoes.routesName);
+              },
+            ),
             SizedBox(
               height: 350,
               width: MediaQuery.of(context).size.width * 0.94,

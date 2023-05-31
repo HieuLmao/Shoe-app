@@ -95,6 +95,9 @@ class CartPage extends StatelessWidget {
                       onSub: () {
                         response.subQuantity(cart);
                       },
+                      onDelete: () {
+                        response.deleteCartItem(cart.id);
+                      },
                     );
                   },
                   itemCount: response.cartList.length,

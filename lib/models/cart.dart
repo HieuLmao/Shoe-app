@@ -69,5 +69,8 @@ class CartProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void deleteCartItem() {}
+  void deleteCartItem(String id) {
+    _cartList.remove(id);
+    notifyListeners();
+  }
 }

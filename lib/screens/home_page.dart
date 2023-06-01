@@ -82,7 +82,12 @@ class _HomePageState extends State<HomePage> {
                 itemBuilder: (context, index, realIndex) =>
                     ChangeNotifierProvider.value(
                   value: response[index],
-                  child: const ShoeItem(),
+                  child: ShoeItem(
+                    height: 350,
+                    width: MediaQuery.of(context).size.width * 0.73,
+                    heightImg: MediaQuery.of(context).size.height * 0.23,
+                    widthImg: MediaQuery.of(context).size.width,
+                  ),
                 ),
                 options: CarouselOptions(
                   aspectRatio: MediaQuery.of(context).size.width * 0.65 / 250,

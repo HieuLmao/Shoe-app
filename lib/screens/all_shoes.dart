@@ -35,14 +35,16 @@ class AllShoes extends StatelessWidget {
             const SearchWidget(),
             Expanded(
               child: GridView.builder(
+                itemCount: response.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    childAspectRatio: 1,
-                    mainAxisSpacing: small,
-                    crossAxisSpacing: small),
+                  crossAxisCount: 2,
+                  childAspectRatio: 1,
+                  mainAxisSpacing: small,
+                  crossAxisSpacing: small,
+                ),
                 itemBuilder: (context, index) => ChangeNotifierProvider.value(
                   value: response[index],
-                  child: const ShoeItem(),
+                  child: NewShoeItem(),
                 ),
               ),
             )

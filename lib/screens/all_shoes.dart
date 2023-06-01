@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:provider/provider.dart';
 import 'package:shoe_app/styles/styles.dart';
-import 'package:shoe_app/widgets/appbar.dart';
 import 'package:shoe_app/widgets/export.dart';
 
 import '../provider/shoe_provider.dart';
@@ -44,7 +43,7 @@ class AllShoes extends StatelessWidget {
                 ),
                 itemBuilder: (context, index) => ChangeNotifierProvider.value(
                   value: response[index],
-                  child: NewShoeItem(),
+                  child: const NewShoeItem(),
                 ),
               ),
             )

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shoe_app/screens/all_shoes.dart';
 import 'package:shoe_app/styles/styles.dart';
 
 class TitleWidget extends StatelessWidget {

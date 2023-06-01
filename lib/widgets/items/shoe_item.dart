@@ -8,7 +8,20 @@ import 'package:shoe_app/styles/styles.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class ShoeItem extends StatelessWidget {
-  const ShoeItem({super.key});
+  final double height;
+  final double heightImg;
+  final double widthImg;
+  final double width;
+  final Widget? icon;
+
+  const ShoeItem({
+    super.key,
+    this.icon,
+    required this.height,
+    required this.width,
+    required this.heightImg,
+    required this.widthImg,
+  });
 
   // final Function()? addToCart;
   // final String imageUrl;
@@ -37,8 +50,8 @@ class ShoeItem extends StatelessWidget {
             arguments: response);
       },
       child: Container(
-        height: 350,
-        width: MediaQuery.of(context).size.width * 0.73,
+        height: height,
+        width: width,
         padding: EdgeInsets.all(sx),
         margin: EdgeInsets.symmetric(vertical: small, horizontal: small),
         decoration: BoxDecoration(
@@ -61,8 +74,8 @@ class ShoeItem extends StatelessWidget {
             Stack(
               children: [
                 Container(
-                  height: MediaQuery.of(context).size.height * 0.23,
-                  width: MediaQuery.of(context).size.width,
+                  height: heightImg,
+                  width: widthImg,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(sx),
                   ),
